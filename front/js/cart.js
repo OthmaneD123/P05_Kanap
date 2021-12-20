@@ -1,5 +1,5 @@
 //Initialisation du local storage
-let produitLocalStorage = JSON.parse(localStorage.getItem("produit"));
+let produitLocalStorage = JSON.parse(localStorage.getItem("produit")||'[]');
 console.table(produitLocalStorage);
 const positionEmptyCart = document.querySelector("#cart__items");
 
@@ -268,7 +268,7 @@ function postForm(){
 
     //Ecouter le panier
     btn_commander.addEventListener("click", (event)=>{
-    
+    event.preventDefault()
         //Récupération des coordonnées du formulaire client
         let inputName = document.getElementById('firstName');
         let inputLastName = document.getElementById('lastName');
